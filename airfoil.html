@@ -49,7 +49,10 @@
                                 <header class="major">
                                  <h1>Abstract</h1>
                                  </header>
-								 <a class="image main"><img src="images/airfoil/airfoil_pre_test.heic" alt="" /></a>
+								 <div style="text-align: center;">
+									<img src="images/airfoil/wing-assembly.jpg" width="900">
+								 </div>
+								 <br />
                                  <p>The main objective of this project was to design and manufacture an aircraft wing that 
 									could withstand a load of 97 lbf applied 23.5 inches from the secured end while minimizing 
 									the weight, deflection, and cost of manufacturing of the entire assembly. In order to accomplish 
@@ -81,11 +84,11 @@
 									material specifications and orders were made through McMaster-Carr. </p>
 									<br />
 									<hr />
+
                                 <!-- Design -->
                                 <header class="major">
                                     <h1>Design</h1>
                                 </header>
-                                <br />
 								<p>During the initial design phase, we decided to have several teams simultaneously working on different 
 									design aspects of the wing. We first split the team into either beam or bulkhead design. The beam 
 									part of the team was divided into two groups. The entire team decided that an I-beam would be the 
@@ -97,6 +100,11 @@
 									optimize for weight while still meeting this requirement.
 									<br />
 									<br />
+									<h2>Our Selected I-Beam</h2>
+                                	<a class="image fit"><img src="images/airfoil/circular_hole_I-beam.JPG" alt="" /></a>
+									<br />
+									<h2>FEA on Our Selected I-Beam</h2>
+                                	<a class="image fit"><img src="images/airfoil/beam_fea.png" alt="" /></a>
 									Three members of the team were assigned to work on the bulkheads. Their primary goal was to design 
 									manufacturable bulkheads with the least weight, as there was no analysis to run on their bulkheads 
 									themselves; rather, they could only be tested in the entire assembly once completed. In discussions 
@@ -107,27 +115,34 @@
 									bulkheads with circular hole cutouts.
 									<br />
 									<br />
+									<h2>Bulkhead Design</h2>
+                                	<a class="image fit"><img src="images/airfoil/circle_bulkhead.png" alt="" /></a>
+									<br />
 									The design was optimized through repeated modifications of specific primary dimensions according to 
 									the results from the prior FEA. This allowed the parts to converge to an optimal combination of 
 									strength and weight. This combination was crucial for the design of the beams. In their case, the 
 									primary dimensions to optimize were web and flange thickness as well has truss/hole dimensions. 
 									Optimization of the bulkheads was conducted slightly differently, where they were designed to have 
 									the least amount of weight while still keeping the frame of the airfoil and having enough outer 
-									surface area to support the skin. 
+									surface area to support the skin.
+									<br />
+									<br />
+									<h2>Leading Edge</h2>
+                                	<a class="image fit"><img src="images/airfoil/leadingedge.JPG" alt="" /></a>
+									<br />
+									<h2>I-Beam and Bulkheads</h2>
+                                	<a class="image fit"><img src="images/airfoil/fullbeambulkheads.PNG" alt="" /></a>
+									<br />
+									<h2>Full Airfoil Assembly FEA</h2>
+                                	<a class="image fit"><img src="images/airfoil/assembly_fea.png" alt="" /></a>
 									</p>
-                                <h2>Hydraulic Piston Cylinder Assembly</h2>
-                                <a class="image fit"><img src="images/hydraulic_piston_cylinder1.png" alt="" /></a>
-                                <br />
-                                <h2>Hydraulic Piston Cylinder Exploded View</h2>
-                                <a class="image fit"><img src="images/hydraulic_piston_cylinder_exploded.png" alt="" /></a>
-                                <br />
+									<br />
                                 <hr />
                                 
                                 <!-- Manufacturing -->
                                 <header class="major">
                                 <h1>Manufacturing</h1>
                                 </header>
-                                <br />
 								<p>
 									Manufacturing of the wing's components included multiple tools and machines, including a Haas VF-7/40 
 									Vertical CNC Milling machine, a ProtoMAX waterjet machine, a Creality Ender 3 Pro 3-D printer, a 
@@ -139,34 +154,44 @@
 									(0.032 and 0.016 inches) with the bandsaw, the leading edge was printed in the Ender 3 Pro, and the 
 									secondary bulkheads were printed in the Formlabs printer.
 									<br />
+									<h2>Waterjetted Aluminum Bulkhead </h2>
+                                	<a class="image fit"><img src="images/airfoil/waterjetbh.png" alt="" /></a>
 									<br />
 									Once all the parts were ready, the wing was assembled over the course of several days and subsequently 
 									tested with the 97 lbf load to determine its performance in terms of the vertical deflection of the 
-									wingtip relative to the mount. </p>
-                                <h2>GD & T Drawing</h2>
-                                <a class="image fit"><img src="images/practice_drawing_drawing.png" alt="" /></a>
-                                <br />
+									wingtip relative to the mount.
+									<br />
+									<br />
+								</p>
                                 <hr />
 
                                 <!-- Results -->
                                 <header class="major">
-                                <h1>Results and Conclusion</h1>
+                                <h1>Testing, Results, and Conclusion</h1>
                                 </header>
 								<p>Ultimately, our wing successfully passed the 97lbf load test with minimal permanent deflection. 
 									With the load applied, the wing deflected a total of 3.75 inches, which is substantial but reasonable. 
+									The lbf load was applied to the airfoil through the use of a winch-pulley system to raise a 97 lb weight 
+									off the ground. 
 									<br />
+									<h2>Airfoil Before Testing</h2>
+                                	<a class="image fit"><img src="images/airfoil/airfoil_pre_test.jpg" alt="" /></a>
 									<br />
-
-									After completing this required test, we increased the load to 120 lbf to further test the strength 
-									of our wing and determine the points of weakness. Although the wing seemed to lift the weight briefly, 
-									the load caused permanent deflection and fractured the beam. The beam failed at a distance of roughly 
-									1/3 the wing length from the fixture point. After cutting open the skin, it was evident that the beam 
-									had failed due to torsion, which caused the web to collapse and subsequently led to permanent bending 
+									<h2>Airfoil As The Load is Being Applied</h2>
+                                	<a class="image fit"><img src="images/airfoil/airfoil_closeup.jpg" alt="" /></a>
+									<br />
+									After completing this required test, we progressively increased the load to 120 lbf to further test the 
+									strength of our wing and determine the points of weakness. Although the wing seemed to lift the weight 
+									briefly, the load caused permanent deflection and fractured the beam. The beam failed at a distance of 
+									roughly 1/3 the wing length from the fixture point. After cutting open the skin, it was evident that the 
+									beam had failed due to torsion, which caused the web to collapse and subsequently led to permanent bending 
 									along the flanges. This was reasonably expected, given our thin web thickness of 0.05". In our CREO 
 									analysis of the beam, the load was applied perfectly vertically, which differed significantly from the 
 									torqued load during the physical test. Although our chosen web thickness was perfect for our intended 
 									load, one might consider increasing the web thickness in order to accommodate higher loads.
 									<br />
+									<h2>Airfoil With Significant Deflection</h2>
+                                	<a class="image fit"><img src="images/airfoil/airfoil_deflecting_97.jpg" alt="" /></a>
 									<br />
 									We also found that the last bulkhead was cracked and detached from the beam. During the manufacturing 
 									process, this bulkhead also cracked under the pressure of the rivet, which was another anticipated weak 
