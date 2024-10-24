@@ -45,30 +45,36 @@
 						<!-- Post -->
 							<section class="post">
 								<header class="major">
-									<span class="date">April 2022 - May 2022</span>
-									<h1>Checkers Game</h1>
+									<span class="date">April 2024</span>
+									<h1>Seam Carver</h1>
                                 </header>
 
-                                <div style="display: flex; justify-content: center;"> 
-                                    <iframe width="900" height="500" src="https://www.youtube.com/embed/QNQPd0Kv2HI?si=8-lsVOE4CsE8OOoQ" title="YouTube video player" frameborder="0" 
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                                </div>
-
-                                <img src="images/city_before.png" style="display:inline-block;">
-                                <img src="images/city_post_seam_carver.png" style="display:inline-block;">
-                                <br />
-
-                                <img src="images/city_vertical_seam.png" style="display:inline-block;">
-                                <img src="images/city_horizontal_seam.png" style="display:inline-block;">
-                                <br />
+                                <a class="image main"><img src="images/city_vertical_seam.png"></a>
 
                                 <p>This was a programming assignment a classmate and I completed for a Data Structures and Algorithms Course 
-                                    (taught in Java) that required me to implement a seam-carving algorithm for image resizing by finding and 
+                                    (taught in Java) that required us to develop a seam-carving algorithm for image resizing by finding and 
                                     removing seams of pixels with minimum energy. I needed to create a SeamCarver class that handles energy calculations 
                                     using the dual-gradient method, identifies horizontal and vertical seams, and removes them. My implementation 
                                     needed to meet efficiency requirements, pass unit tests, and adhere to specified performance requirements. 
                                     We wrote 295 lines of code, used a dynamic programming approach, and received a perfect score on this assignment.
+                                    <br />
+                                    <br />
+                                    The image above displays the first vertical seam (in red and on the right side of the image) that is removed from the 
+                                    original image. The image is grayscale as it shows the energy levels of each pixel. The whiter the pixel, the 
+                                    more energy it has. As stated above, the seam that is carved from the image is the seam with the lowest total energy.
+                                    <br />
+                                    <br />
+                                    The images below are the original image, and then the image with 100 seams removed from both the vertical and horizontal 
+                                    directions. The differences between the two images are clear when one compares each edge of the photos.
                                 </p>
+                                <br />
+
+
+                                <h2>Original Image</h2>
+                                <a class="image fit"><img src="images/city_before1.png" alt="" /></a>
+
+                                <h2>Image After Seam Carving</h2>
+                                <a class="image fit"><img src="images/city_after1.png" alt="" /></a>
 								<br />
                             </section>
 					</div>
