@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Autonous Car</title>
+		<title>Heat Transfer Simulation</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -19,7 +19,7 @@
 
                 <!-- Intro -->
 				<div id="intro">
-					<h1>Autonomous Car<br /></h1>
+					<h1>Heat Transfer Simulation<br /></h1>
                     <p><br />
 						<br />
 					</p>
@@ -32,7 +32,7 @@
 						<ul class="links">
 							<li><a href="index.html">Projects</a></li>
 							<li><a href="resume.html">Resume</a></li>
-							<li class="active"><a href="seam_carver.html">Autonomous Car</a></li>
+							<li class="active"><a href="psi_omega_simulation.html">Heat Transfer Simulation</a></li>
 						</ul>
 						<ul class="icons">
 							<li><a href="https://www.linkedin.com/in/chimwemwe-chinkuyu/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
@@ -45,54 +45,57 @@
 						<!-- Post -->
 							<section class="post">
 								<header class="major">
-									<span class="date">March 2025 - May 2025</span>
-									<h1>Autonomous Car</h1>
+									<span class="date">April 2025 - May 2025</span>
+									<h1>Psi-Omega Numerical Heat Transfer Simulation</h1>
                                 </header>
 
                                 <a class="image main"><img src="images/autonomous_car_main.jpeg"></a>
 
-                                <p>
-									This project served as the capstone for my Robotics and Intelligent Systems course, where four classmates and I programmed 
-									an RC truck using Python and ROS (Robot Operating System) to complete two challenging autonomous navigation tasks.<br /><br />
-									
-									<b>Task 1</b> - Obstacle Course Racing: Inspired by Ken Block's Ultimate Gymkhana Grid, we implemented ILQR (Iterative Linear 
-									Quadratic Regulator) with cost-prioritization to navigate the truck autonomously through a complex waypoint sequence 
-									while avoiding up to 20 randomly placed obstacle cubes. The course required precise navigation through 16 waypoints in 
-									a specific order within a 3 minute 30 second time limit.<br /><br />
+                                <p>                                    
+                                    This computational fluid dynamics project explored unsteady heat transfer in low-Reynolds-number flows using the 
+                                    streamfunction-vorticity finite-difference method. I simulated two key scenarios: convective flow around a 
+                                    circular cylinder and flow over a NACA 2412 airfoil from a Cessna 182 aircraft.<br /><br />
 
-									Teams received time penalties for various infractions during their runs. Head-on collisions with obstacles resulted in 
-									a 5-second penalty each, while obstacle brushing added 3 seconds per incident. Manual overrides of the autonomous system 
-									incurred a 5-second penalty, and track departures where the truck crossed lane boundaries added 3 seconds each.<br /><br />
+                                    <h2>Technical Approach</h2>
+                                    I implemented the Psi-Omega (streamfunction-vorticity) method from scratch in MATLAB, solving three coupled governing 
+                                    equations: the Poisson equation for streamfunction, the momentum equation for vorticity evolution, and the energy equation 
+                                    for temperature distribution. The simulation used upwind differencing for spatial derivatives and forward Euler time 
+                                    advancement, with Gauss-Seidel iteration and over-relaxation for faster convergence.<br /><br />
 
-									Our team was the <b>4th fastest out of 14 teams</b> after accounting for time reductions due to penalties.<br /><br />
+                                    <h2>Key Results & Validation</h2>
+                                    
+                                    <h3>Cylinder Flow</h3>
+                                    Successfully generated characteristic vortex shedding that visually matched reference simulations, 
+                                    though Strouhal numbers of 0.02 and 0.42 deviated from the expected ~0.2 standard. Heat transfer results aligned 
+                                    with expectations, maintaining proper temperature boundaries (400°C cylinder, 300°C flow) and achieving 7.6 kW/m² 
+                                    heat flux.<br /><br />
 
-									<b>Task 2</b> - Safety Filter: We developed an Advanced Driver Assistance System (ADAS) that continuously monitored manual driver 
-									inputs and intervened to prevent unsafe actions. The safety filter successfully prevented dangerous user inputs by overriding 
-									steering inputs that would drive the truck off-track or too far across lane boundaries, while minimizing unnecessary interventions 
-									to maintain smooth operation.<br />
+                                    <h3>Airfoil Analysis</h3>
+                                    The 5-degree simulation produced smooth, attached flow with no vortex shedding as expected, 
+                                    validating perfectly against SimFlow CFD software. At 30 degrees, distinct vortex shedding confirmed stall 
+                                    conditions with a Strouhal number of 0.62. The reduced heat flux (1,002.6 W/m² vs 1,133.6 W/m²) validated 
+                                    expected wake shielding effects. While visual flow patterns and heat transfer trends matched theoretical 
+                                    expectations excellently, the cylinder Strouhal discrepancy suggested areas for future parameter refinement. 
+                                    The airfoil simulations demonstrated strong agreement with both physical expectations and independent validation.<br /><br />
+                                    
+                                    <h2>Performance Against Standards</h2>
+                                    While visual flow patterns and heat transfer trends matched theoretical expectations and reference 
+                                    data excellently, the cylinder Strouhal numbers suggested potential areas for parameter refinement in future work. 
+                                    The airfoil simulations demonstrated excellent agreement with both physical expectations and independent CFD 
+                                    validation, confirming the robustness of my numerical implementation for complex geometries.<br /><br />
 
-								</p>
+                                    <h2>Technical Challenges & Learning Outcomes</h2>
+                                    The most significant challenge was code debugging and optimization, requiring systematic troubleshooting through 10 code 
+                                    iterations for Part A and 5 for Part B to resolve numerical stability issues and matrix indexing errors. With simulations 
+                                    requiring 3-6 hours of runtime, computational efficiency became critical.<br /><br />
 
-								<h2>Implementation & Technical Approach</h2>
-								<p>For Task 1, our obstacle avoidance algorithm operated by examining each point along our planned path, detecting nearby 
-								obstacles, and dynamically switching lanes when obstacles came within a threshold distance. We applied a Gaussian filter 
-								(σ = 2 for the physical truck, σ = 5 for simulation) to smooth the path transitions and prevent abrupt directional changes that 
-								could destabilize the vehicle.<br /><br />
-
-								For Task 2, we implemented a two-layer safety system using dual planners - one evaluating user control inputs and another running 
-								ILQR for safe trajectory generation. The system calculated trajectory costs over varying time horizons, allowing maximum user 
-								control until the last safe moment before ILQR intervention was required.</p>
-
-								<h2>Key Lessons Learned</h2>
-								<p>The most significant challenge was bridging the simulation-to-hardware gap. Algorithms that performed flawlessly in RViz simulation 
-								required substantial parameter adjustments for the physical truck. We discovered that hardware variations emerged over extended testing 
-								sessions, even without code changes, highlighting the importance of robust, adaptive control systems.<br /><br />
-								Systematic debugging proved crucial, particularly when transitioning between simulation and hardware environments. A single misplaced 
-								boolean flag in our Task 2 implementation initially prevented user controls from properly functioning on the physical truck, emphasizing 
-								the critical importance of methodical code review and comprehensive testing across all operational modes.
-								The project demonstrated advanced robotics concepts including real-time path planning, obstacle avoidance, and safety-critical control 
-								systems in both simulation and physical environments.</p>
-                                <br />
+                                    This project strengthened my computational mathematics foundation through implementing finite-difference schemes and 
+                                    iterative solvers, while developing robust MATLAB programming skills with proper boundary conditions. Most importantly, 
+                                    watching vortex shedding patterns and temperature fields evolve in real-time provided invaluable physical insights that 
+                                    analytical solutions alone cannot offer. The extensive debugging process taught systematic problem-solving approaches 
+                                    essential for complex numerical simulations, creating a comprehensive learning experience that bridges academic concepts 
+                                    with practical engineering applications.
+                                    <br /><br />
 
 
                                 <h2>Video of Task 1 Run</h2>
