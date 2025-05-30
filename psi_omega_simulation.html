@@ -49,12 +49,13 @@
 									<h1>Psi-Omega Numerical Heat Transfer Simulation</h1>
                                 </header>
 
-                                <a class="image main"><img src="images/autonomous_car/autonomous_car_main.jpeg"></a>
+                                <a class="image main"><img src="images/psi_omega_simulation/fin_main1_temp_only.png"></a>
 
                                 <p>                                    
                                     This computational fluid dynamics project explored unsteady heat transfer in low-Reynolds-number flows using the 
-                                    streamfunction-vorticity finite-difference method. I simulated two key scenarios: convective flow around a 
-                                    circular cylinder and flow over a NACA 2412 airfoil from a Cessna 182 aircraft.<br /><br />
+                                    streamfunction-vorticity finite-difference numerical simulation method. I simulated flow around two geometries: 
+                                    convective flow around a circular cylinder and flow over a NACA 2412 airfoil (from a Cessna 182 aircraft) at 5 
+                                    and 30-degree angles of attack (AoA).<br /><br />
 
                                     <h2>Technical Approach</h2>
                                     I implemented the Psi-Omega (streamfunction-vorticity) method from scratch in MATLAB, solving three coupled governing 
@@ -70,14 +71,26 @@
                                     with expectations, maintaining proper temperature boundaries (400°C cylinder, 300°C flow) and achieving 7.6 kW/m² 
                                     heat flux.<br /><br />
 
+                                    <h4>Omega, psi, temperature, heat flux, and Strouhal number for the cylinder</h4>
+                                    <a class="image fit"><img src="images/psi_omega_simulation/fin_main1.png" alt="" /></a>
+                                    <br />
+
                                     <h3>Airfoil Analysis</h3>
-                                    The 5-degree simulation produced smooth, attached flow with no vortex shedding as expected, 
-                                    validating perfectly against SimFlow CFD software. At 30 degrees, distinct vortex shedding confirmed stall 
+                                    The 5-degree AoA simulation produced smooth, attached flow with no vortex shedding as expected, 
+                                    validating perfectly against SimFlow CFD software. At an AoA of 30 degrees, distinct vortex shedding confirmed stall 
                                     conditions with a Strouhal number of 0.62. The reduced heat flux (1,002.6 W/m² vs 1,133.6 W/m²) validated 
                                     expected wake shielding effects. While visual flow patterns and heat transfer trends matched theoretical 
                                     expectations excellently, the cylinder Strouhal discrepancy suggested areas for future parameter refinement. 
                                     The airfoil simulations demonstrated strong agreement with both physical expectations and independent validation.<br /><br />
                                     
+                                    <h4>Omega, psi, temperature, heat flux, and Strouhal number for the 5 deegree AoA</h4>
+                                    <a class="image fit"><img src="images/psi_omega_simulation/sim_part_b_main1.png" alt="" /></a>
+                                    <br />
+
+                                    <h4>Omega, psi, temperature, heat flux, and Strouhal number for the 30 degree AoA</h4>
+                                    <a class="image fit"><img src="images/psi_omega_simulation/sim_part_b_main2.png" alt="" /></a>
+                                    <br />
+
                                     <h2>Performance Against Standards</h2>
                                     While visual flow patterns and heat transfer trends matched theoretical expectations and reference 
                                     data excellently, the cylinder Strouhal numbers suggested potential areas for parameter refinement in future work. 
@@ -86,7 +99,7 @@
 
                                     <h2>Technical Challenges & Learning Outcomes</h2>
                                     The most significant challenge was code debugging and optimization, requiring systematic troubleshooting through 10 code 
-                                    iterations for Part A and 5 for Part B to resolve numerical stability issues and matrix indexing errors. With simulations 
+                                    iterations for the cylinder flow and 5 for the airfoil flows to resolve numerical stability issues and matrix indexing errors. With simulations 
                                     requiring 3-6 hours of runtime, computational efficiency became critical.<br /><br />
 
                                     This project strengthened my computational mathematics foundation through implementing finite-difference schemes and 
@@ -98,23 +111,14 @@
                                     <br /><br />
 
 
-                                <h2>Video of Task 1 Run</h2>
+                                <h2>Video of 30 Degree AoA Simulation</h2>
                                 <div style="display: flex; justify-content: center;"> 
-								<iframe class="video" width="900" height="500" src="https://www.youtube.com/embed/9XfZ48AbwDY" title="YouTube video player" frameborder="0" 
+								<iframe class="video" width="900" height="500" src="https://www.youtube.com/embed/XQWk7eYDARc" title="YouTube video player" frameborder="0" 
 								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 
 								allowfullscreen></iframe>
 								</div>
 								<br />
-								
-								<!--
-                                <h2>Video of Task 2</h2>
-                                <div style="display: flex; justify-content: center;"> 
-								<iframe class="video" width="900" height="500" src="https://www.youtube.com/embed/JH6x0_7CG5w?mute=1" title="YouTube video player" frameborder="0" 
-								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 
-								allowfullscreen></iframe>
-								</div>
-								<br />
-								-->
+
                             </section>
 					</div>
 
